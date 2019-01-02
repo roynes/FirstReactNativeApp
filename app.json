@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "First React Native App",
+    "githubUrl": "https://github.com/roynes/FirstReactNativeApp"
   }
 }

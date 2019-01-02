@@ -4,7 +4,8 @@ import React from 'react';
 export default InputLabel = ({ 
   inputStyles, label, 
   placeholder, valuechange, 
-  password, defaultValue, errors 
+  password, defaultValue, errors,
+  email
 }) => {
   return (
     <View style={ [inputStyles, styles.widthFull] }>
@@ -17,6 +18,7 @@ export default InputLabel = ({
           secureTextEntry={ password && true }
           defaultValue={ defaultValue }
           maxLength={ 50 }
+          keyboardType={ email? 'email-address' : 'default' }
         ></TextInput>
       </View>
       { errors.map((error) => <Text style={ styles.statusText } key={error.split(' ')}>{ error }</Text>) }

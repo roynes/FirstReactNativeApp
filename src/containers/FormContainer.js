@@ -2,7 +2,7 @@ import { toggleRemember, updateEmail, updatePassword } from '../store/actions/fo
 import { CustomButton, InputLabel, CustomCheckBox }  from '../components';
 import { View, StyleSheet, PixelRatio, Alert } from  'react-native';
 import { connect } from 'react-redux';
-import { validate } from '../utility/validate';
+import validate from '../utility/validate';
 import React from 'react';
 
 let pixelRatio = PixelRatio.get();
@@ -119,7 +119,7 @@ class FormContainer extends React.Component {
             bordercolor='#aa8fdb'
             style={ styles.inputLabelWidth }
             disable={ this.state.disable }
-            onclick={ () => { Alert.alert('Login Successfull') }}
+            onclick={ () => { Alert.alert('Login Successful') }}
           ></CustomButton>
         </View>
       </View>

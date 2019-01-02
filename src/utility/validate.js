@@ -40,7 +40,7 @@ function email(value) {
   return false;
 }
 
-export function validate(value='', constraint='') {
+export default function (value='', constraint='') {
   let errors = [];
 
   if (constraint.length === 0) return { errors };
@@ -54,11 +54,7 @@ export function validate(value='', constraint='') {
 
     if(typeof mapper(constraintName) === 'boolean') return;
 
-    if(constraintName === 'email') {
-      result = (mapper(constraintName))(value);
-    } else {
-      result = (mapper(constraintName))(value, constraintValue);
-    }
+    result = constraintName === 'email' ? (mapper(constraintName))(value) : (mapper(constraintName))(value, constraintValue);
 
     if(false != result) {
       errors.push(result);
